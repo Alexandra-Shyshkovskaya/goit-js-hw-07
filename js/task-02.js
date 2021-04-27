@@ -21,11 +21,11 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
-const ulList = document.createElement('ul');
+/*const ulList = document.createElement('ul');
 ulList.id = 'ingredients';
-ulList.textContent = "Ингредиенты:";
+ulList.textContent = "Ингредиенты:";*/
 
-const li1 = document.createElement('li');
+/*const li1 = document.createElement('li');
  li1.textContent = ingredients[0];
  const li2 = document.createElement('li');
  li2.textContent = ingredients[1];
@@ -40,4 +40,19 @@ const li1 = document.createElement('li');
 
 
 ulList.append(li1, li2, li3, li4, li5, li6);
+document.body.appendChild(ulList);*/
+
+const ulList = document.createElement('ul');
+ulList.querySelector("#ingredients");
+ulList.textContent = "Ингредиенты:";
+console.log(ulList);
+
+const createIngredientsList = ingredients.map((ingredient) => {
+  const liItem = document.createElement("li");
+  liItem.textContent = ingredient;
+  return liItem;
+  
+});
+
+ulList.append(...createIngredientsList);
 document.body.appendChild(ulList);
